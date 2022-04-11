@@ -4,7 +4,7 @@ import saveAs from 'file-saver'
 
 import PopupSettings from '../../components/apps/extension_maker/PopupSettings.jsx'
 
-const extension_maker = () => {
+const ExtensionMaker = () => {
   const titleError = useRef()
   const titleInput = useRef()
 
@@ -131,14 +131,14 @@ const extension_maker = () => {
 
   return (
     <div className='block w-screen h-screen'>
-      <form onSubmit={submitForm} className='w-8/12 h-5/6 pt-10 mx-auto' id='extension-maker-form'>
+      <form onSubmit={submitForm} className='w-8/12 pt-10 mx-auto h-5/6' id='extension-maker-form'>
         <div className=''>
-          <input className='block w-full border-red-500 bg-gray-200 rounded-md p-3 outline-none' defaultValue='' ref={titleInput} onChange={verifyTitle} type='text' name='title' id='extension-title-input' placeholder='Title (< 45 characters)'/>
+          <input className='block w-full p-3 bg-gray-200 border-red-500 rounded-md outline-none' defaultValue='' ref={titleInput} onChange={verifyTitle} type='text' name='title' id='extension-title-input' placeholder='Title (< 45 characters)'/>
           <label className='hidden pl-2 text-red-500' htmlFor='name' ref={titleError}></label>
         </div>
 
         <div className='mt-5 h-1/5'>
-          <textarea className='block border-red-500 bg-gray-200 rounded-md w-full h-full p-3 outline-none' defaultValue='' ref={descInput} onChange={verifyDescription} type='text' name='description' id='extension-desc-input' placeholder='Description (< 128 characters)' />
+          <textarea className='block w-full h-full p-3 bg-gray-200 border-red-500 rounded-md outline-none' defaultValue='' ref={descInput} onChange={verifyDescription} type='text' name='description' id='extension-desc-input' placeholder='Description (< 128 characters)' />
           <label className='hidden pl-2 text-red-500' htmlFor='name' ref={descError}></label>
         </div>
 
@@ -147,12 +147,12 @@ const extension_maker = () => {
             {
               showPopupSettings ? 
               (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 pb-1 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="inline-block w-6 h-6 pb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
                 </svg>
               ) :
               (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 pb-1 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="inline-block w-6 h-6 pb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               )
@@ -172,11 +172,11 @@ const extension_maker = () => {
         </div>
 
         <div className='mt-5'>
-          <button className='block w-full bg-blue-500 text-white rounded-md p-3 outline-none' type='submit'>Create Extension</button>
+          <button className='block w-full p-3 text-white bg-blue-500 rounded-md outline-none' type='submit'>Create Extension</button>
         </div>
       </form>
     </div>
   )
 }
 
-export default extension_maker
+export default ExtensionMaker
