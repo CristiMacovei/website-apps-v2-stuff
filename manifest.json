@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "[input]",
+  "version": "1.0.0",
+  "description": "[input]",
+  "author": "Cristi Macovei - Auto Generated",
+  "icons": {
+    "16": "assets/img16.png",
+    "48": "assets/img48.png",
+    "128": "assets/img128.png"
+  },
+  "action": {
+    "default_popup": "popup/index.html"
+  }
+}
